@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Custom Properties</title>
+    <style>
+        :root{
+            --gutter-width: 20px;
+        }
+
+        .custom-grid{
+            display: grid;
+            grid-template-columns: 2fr max(0, var(--gutter-width)) calc(var(--gutter-width) + 10px);
+            /* grid-template-columns: 2fr 20px 30px; */
+            gap: 10px;
+        }
+
+        .box{
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center bg-gray-100">
+        <div class="custom-grid w-3/4">
+            <!-- col-1 -->
+            <div class="box bg-blue-500 text-white">
+                Main Content(2fr)
+            </div>
+            <!-- col-2 -->
+            <div class="box bg-green-500 text-white">
+                 Gutter (var(--gutter-width))
+            </div>
+            <!-- col-3 -->
+            <div class="box bg-red-500 text-white">
+                Sidebar (gutter + 10px)
+            </div>
+        </div>
+    </div>
+</body>
+</html>
