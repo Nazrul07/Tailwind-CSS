@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Button</title>
+  <link href="./src/output.css" rel="stylesheet">
+
+  <!-- 🔥 Inline CSS helper for dynamic colors -->
+  <style>
+    .btn-dynamic {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease;
+    }
+    .btn-dynamic:hover {
+      background-color: var(--bg-color-hover);
+    }
+  </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div id="app" class="space-x-4"> </div>
+
+  <script type="module">
+    function BrandedButton({ buttonColor, buttonColorHover, textColor, text }) {
+      const btn = document.createElement("button");
+      btn.textContent = text;
+
+      // Inject CSS variables
+      btn.style.setProperty("--bg-color", buttonColor);
+      btn.style.setProperty("--bg-color-hover", buttonColorHover);
+      btn.style.setProperty("--text-color", textColor);
+
+      // Use Tailwind utilities + custom helper
+      btn.className = "px-4 py-2 rounded-lg font-semibold btn-dynamic";
+
+      return btn;
+    }
+
+    window.onload = () => {
+      const container = document.getElementById("app");
+
+      container.appendChild(
+        BrandedButton({
+          buttonColor: "#3b82f6",      // blue-500
+          buttonColorHover: "#1d4ed8", // blue-700
+          textColor: "white",
+          text: "Primary Button"
+        })
+      );
+
+      container.appendChild(
+        BrandedButton({
+          buttonColor: "#22c55e",      // green-500
+          buttonColorHover: "#15803d", // green-700
+          textColor: "white",
+          text: "Success Button"
+        })
+      );
+    };
+  </script>
+</body>
+</html>
