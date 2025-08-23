@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Form states</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body>
+    <div class="flex justify-center items-center bg-gray-100 p-6 min-h-screen">
+        <form class="bg-white shadow-lg rounded-xl p-6 w-96 space-y-4" action="">
+            <!-- Username (disabled) -->
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Username</label>
+                <input type="text" value="User" disabled class="w-full rounded-lg border px-3 py-2 disabled:border-gray-100 disabled:text-gray-500 dark:disabled:border-gray-700 dark:disabled:bg-gray-800/30" />
+            </div>
+
+            <!-- Email (required + invalid styling) -->
+             <div>
+                <label class="block text-gray-700 font-medium mb-1">Email</label>
+                <input type="email" placeholder="example@gmail.com" required class="w-full rounded-lg border px-3 py-2 required:border-gray-300 placeholder-gray-400 focus:border-sky-500 focus:outline-none focus:invalid:border-red-500" />
+             </div>
+
+            <!-- Password (required) -->
+             <div>
+                <label class="block text-gray-700 font-medium mb-1">Password</label>
+                <input type="password" placeholder="Enter your password" required minlength="8" class="w-full rounded-lg border px-3 py-2 required:border-gray-300 placeholder:text-gray-500 focus:border-sky-500 focus:outline-none" />
+             </div>
+
+             <!-- Submit Button -->
+              <button type="submit" class="w-full bg-sky-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-sky-600 tansition">
+                Save Changes
+              </button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind nth Child demo.</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100 space-x-2">
+    <div class="space-y-2 p-6 bg-white shadow-lg rounded-xl">
+        <h2 class="text-lg font-bold mb-4">nth child variant demo</h2>
+        <ul class="space-y-1">
+            <!-- (nth-) count every element in the div -->
+            <li class="rounded-sm p-2 bg-gray-200 nth-3:bg-blue-200">Item 1</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-3:bg-blue-200">Item 2</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-3:bg-blue-200">Item 3 -> (3rd child, turn blue)</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-3:bg-blue-200">Item 4</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-last-2:bg-green-200">Item 5 -> (2nd last, child turn green)</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-last-2:bg-green-200">Item 6 -> (last child, stay gray)</li>
+        </ul>
+    </div>
+
+    <div class="space-y-2 p-6 bg-white shadow-lg rounded-xl">
+        <h2 class="text-lg font-bold mb-4">Using nth-of-type</h2>
+        <ul class="space-y-1">
+            <!-- (nth-of-type-) Counts only elements of the same type. -->
+            <li class="rounded-sm p-2 bg-gray-200 nth-of-type-3:underline">Item 1</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-of-type-3:underline">Item 2</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-of-type-3:underline">Item 3 -> (underline)</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-of-type-3:underline">Item 4</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-of-type-5:underline">Item 5 -> (underline)</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-of-type-5:underline">Item 6</li>
+        </ul>
+    </div>
+
+    <div class="space-y-2 p-6 bg-white shadow-lg rounded-xl">
+        <h2 class="text-lg font-bold mb-4">Arbitrary n-th child (Odd list only)</h2>
+        <ul class="space-y-1">
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n+1_of_li]:bg-blue-200">Odd 1 -> Blue</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n+1_of_li]:bg-blue-200">Even 2</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n+1_of_li]:bg-blue-200">Odd 3 -> Blue</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n+1_of_li]:bg-blue-200">Even 4</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n+1_of_li]:bg-blue-200">Odd 5 -> Blue</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n+1_of_li]:bg-blue-200">Even 6</li>
+        </ul>
+    </div>
+
+    <div class="space-y-2 p-6 bg-white shadow-lg rounded-xl">
+        <h2 class="text-lg font-bold mb-4">Arbitrary n-th child (Even list only)</h2>
+        <ul class="space-y-1">
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n_of_li]:bg-blue-200">Odd 1</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n_of_li]:bg-blue-200">Even 2 -> Blue</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n_of_li]:bg-blue-200">Odd 3</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n_of_li]:bg-blue-200">Even 4 -> Blue</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n_of_li]:bg-blue-200">Odd 5</li>
+            <li class="rounded-sm p-2 bg-gray-200 nth-[2n_of_li]:bg-blue-200">Even 6 -> Blue</li>
+        </ul>
+    </div>
+</body>
+</html>
